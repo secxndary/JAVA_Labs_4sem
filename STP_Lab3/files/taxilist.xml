@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container xmlns="http://msiter.ru"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://msiter.ru validation.xsd">
+    
+    <TaxiList>
+        <Taxi>
+            <Name>Volkswagen Polo</Name>
+            <Fuel>0.12</Fuel>
+            <Speed>130</Speed>
+            <Type>carType.economy</Type>
+        </Taxi>
+        <Taxi>
+            <Name>Mitsubishi Lancer</Name>
+            <Fuel>0.13</Fuel>
+            <Speed>190</Speed>
+            <Type>carType.comfort</Type>
+        </Taxi>
+        <Taxi>
+            <Name>BMW M3</Name>
+            <Fuel>0.17</Fuel>
+            <Speed>200</Speed>
+            <Type>carType.comfortPlus</Type>
+        </Taxi>
+        <Taxi>
+            <Name>Mercedes SLS AMG</Name>
+            <Fuel>0.19</Fuel>
+            <Speed>230</Speed>
+            <Type>carType.business</Type>
+        </Taxi>
+        <Taxi>
+            <Name>Volkswagen Transporter</Name>
+            <Fuel>0.26</Fuel>
+            <Speed>110</Speed>
+            <Type>carType.truck</Type>
+        </Taxi>
+        <Taxi>
+            <Name>Renault Logan</Name>
+            <Fuel>0.12</Fuel>
+            <Speed>120</Speed>
+            <Type>carType.child</Type>
+        </Taxi>
+    </TaxiList>
+</Container>

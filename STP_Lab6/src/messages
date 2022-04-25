@@ -1,0 +1,17 @@
+2022-04-05 17:31:08 INFO  Main:22 - Started main
+2022-04-05 17:31:09 INFO  Main:51 - Connected!
+2022-04-05 17:31:10 INFO  Main:78 - Query #1
+2022-04-05 17:31:10 INFO  Main:106 - Query #2
+2022-04-05 17:31:12 INFO  Main:130 - Query #3
+2022-04-05 17:31:12 INFO  Main:166 - Query #4
+2022-04-05 17:31:12 INFO  Main:183 - Transaction
+2022-04-05 17:31:12 ERROR Main:238 - Error!
+2022-04-05 17:31:12 INFO  Main:67 - Connection closed!
+2022-04-05 17:32:57 INFO  Main:22 - Started main
+2022-04-05 17:32:58 INFO  Main:51 - Connected!
+2022-04-05 17:32:58 INFO  Main:78 - Query #1
+2022-04-05 17:32:59 INFO  Main:106 - Query #2
+2022-04-05 17:32:59 INFO  Main:130 - Query #3
+2022-04-05 17:32:59 INFO  Main:166 - Query #4
+2022-04-05 17:32:59 INFO  Main:183 - Transaction
+2022-04-05 17:32:59 INFO  Main:67 - Connection closed!

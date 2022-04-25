@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://msiter.ru" xmlns="http://msiter.ru" elementFormDefault="qualified">
+
+    <xs:element name="Container">
+    <xs:complexType>
+    <xs:sequence>
+        <xs:element name="TaxiList">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Taxi" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="Name" type="xs:string" />
+                    <xs:element name="Fuel" type="xs:double" />
+                    <xs:element name="Speed" type="xs:positiveInteger" />
+                    <xs:element name="Type">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="carType.economy"/>
+                                <xs:enumeration value="carType.comfort"/>
+                                <xs:enumeration value="carType.comfortPlus"/>
+                                <xs:enumeration value="carType.business"/>
+                                <xs:enumeration value="carType.child"/>
+                                <xs:enumeration value="carType.truck"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:schema>
