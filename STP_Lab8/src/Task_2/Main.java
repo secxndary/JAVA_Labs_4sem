@@ -1,7 +1,6 @@
 package Task_2;
 import Task_2.client.Client;
 import Task_2.server.Server;
-import static sun.net.www.protocol.http.AuthCacheValue.Type.Server;
 
 // Клиент посылает через сервер сообщение другому клиенту, выбранному из списка //
 
