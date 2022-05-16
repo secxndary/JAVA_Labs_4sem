@@ -2,11 +2,15 @@ package Task_2_version2;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Scanner;
 
+
+// этот поток мы создаем, потому что сервак должен все выполнять синхронизированно: надо обрабатывать много потоков — сокетов
 public class SocketThread extends Thread {
+    // всё будем соединять через сокеты - эта хуйня нужна чтобы передавать данные между компами
     private Socket socket;
+    // также нам нужны инпутстрим (потока для ввода клиентом данных)
     private PrintStream output;
+    // и аутпутстрим (поток для вывода данных сервером)
     private BufferedReader input;
 
     public SocketThread(Socket socket) throws IOException {
@@ -46,6 +50,7 @@ public class SocketThread extends Thread {
         }
     }
 
+    // чтобы подтвердить что все на уровне инпутов аутпутов работает,выводим в консось сообщение из аутпута (=сообщение инпута)
     private void send(String message) throws IOException {
         for (var socketThread : Server.socketThreads)
             socketThread.output.println(message);

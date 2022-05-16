@@ -2,11 +2,11 @@ package Task_2_version2;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws IOException {
+        // с помощью обычного класса сокет устанавливаем соединение на стороне клиента
         Socket socket = new Socket(InetAddress.getLocalHost(), 7068);
         BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintStream output = new PrintStream(socket.getOutputStream());
