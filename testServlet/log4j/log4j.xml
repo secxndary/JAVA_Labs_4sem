@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" strict="true"
+               name="XMLConfigTest" packages="org.apache.logging.log4j.test">
+    <Filter type="ThresholdFilter" level="trace" />
+
+    <Appenders>
+        <Console name="STDOUT">
+            <Layout type="PatternLayout" pattern="%m %n" />
+        </Console>
+        <RollingFile name="rollingFile"
+                     fileName="logs/log4j2.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval = "1" />
+                <SizeBasedTriggeringPolicy
+                        size="250 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
+
+</Configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="iso-8859-1"?>-->
+<!--<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >-->
+<!--<log4j:configuration debug="false">-->
+
+<!--    <appender name="default.console" class="org.apache.log4j.ConsoleAppender">-->
+<!--        <param name="target" value="System.out" />-->
+<!--        <param name="threshold" value="debug" />-->
+<!--        <layout class="org.apache.log4j.PatternLayout">-->
+<!--            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />-->
+<!--        </layout>-->
+<!--    </appender>-->
+
+<!--    <appender name="default.file" class="org.apache.log4j.FileAppender">-->
+<!--        <param name="file" value="C:/Users/valda/source/repos/semester #4/STP_Labs/testServlet/log4j/mylogfile.log" />-->
+<!--        <param name="append" value="false" />-->
+<!--        <param name="threshold" value="debug" />-->
+<!--        <layout class="org.apache.log4j.PatternLayout">-->
+<!--            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />-->
+<!--        </layout>-->
+<!--    </appender>-->
+
+<!--    <appender name="another.file" class="org.apache.log4j.FileAppender">-->
+<!--        <param name="file" value="C:/Users/valda/source/repos/semester #4/STP_Labs/testServlet/log4j/anotherlogfile.log" />-->
+<!--        <param name="append" value="false" />-->
+<!--        <param name="threshold" value="debug" />-->
+<!--        <layout class="org.apache.log4j.PatternLayout">-->
+<!--            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />-->
+<!--        </layout>-->
+<!--    </appender>-->
+
+<!--    <logger name="com.yourcompany.SomeClass" additivity="false">-->
+<!--        <level value="debug" />-->
+<!--        <appender-ref ref="another.file" />-->
+<!--    </logger>-->
+
+<!--    <root>-->
+<!--        <priority value="info" />-->
+<!--        <appender-ref ref="default.console" />-->
+<!--        <appender-ref ref="default.file" />-->
+<!--    </root>-->
+<!--</log4j:configuration>-->
+
+
+
+
+
+
+
+
+
+        <!--<?xml version="1.0" encoding="UTF-8" ?>-->
+        <!--<!DOCTYPE log4j:configuration PUBLIC-->
+        <!--        "-//APACHE//DTD LOG4J 1.2//EN"-->
+        <!--        "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">-->
+        <!--<log4j:configuration debug="false">-->
+        <!--    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">-->
+        <!--        <param name="Encoding" value="utf-8"/>-->
+        <!--        <layout class="org.apache.log4j.PatternLayout">-->
+        <!--            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>-->
+        <!--        </layout>-->
+        <!--    </appender>-->
+        <!--    <appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">-->
+        <!--        <param name="File" value="messages"/>-->
+        <!--        <param name="DatePattern" value="'-'yyyy-MM-dd"/>-->
+        <!--        <param name="Encoding" value="utf-8"/>-->
+        <!--        <layout class="org.apache.log4j.PatternLayout">-->
+        <!--            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>-->
+        <!--        </layout>-->
+        <!--    </appender>-->
+        <!--    <root>-->
+        <!--        <priority value="INFO"/>-->
+        <!--        <appender-ref ref="ConsoleAppender"/>-->
+        <!--        <appender-ref ref="FileAppender"/>-->
+        <!--    </root>-->
+        <!--</log4j:configuration>-->
+

@@ -6,10 +6,7 @@ import com.example.testservlet.Task3.classes.UserDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -80,9 +77,11 @@ public class UserServlet extends HttpServlet {
 
         // =================================  TASK 4 (COOKIES)  =================================
 
+        HttpSession session = request.getSession();
+
         Cookie cookieLogin = new Cookie("login", loginCookie);
         Cookie cookieRole = new Cookie("role", roleCookie);
-//        Cookie cookieDate = new Cookie("date", currentDate.toString());
+//        Cookie cookieDate = new Cookie("date", new Date(session.getLastAccessedTime()).toString());
 //        Cookie cookieCount = new Cookie("count", "1");
         response.addCookie(cookieRole);
         response.addCookie(cookieLogin);

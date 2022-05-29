@@ -5,28 +5,46 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "STP_Lab9" %>
-</h1>
-<br/>
-<a href="hello-servlet" style="font-size: 25px">Task 2 (servlet info)</a>
-<br/><br/>
-<a href="login.jsp" style="font-size: 25px">Task 3 (jdbc + login)</a>
-<br/><br/>
-<a href="cookie-servlet" style="font-size: 25px">Task 4 (cookies)</a>
-<br/><br/>
-<a href="logging.jsp" style="font-size: 25px">Task 4 (logging)</a>
-<br/><br/>
-<a href="registration.jsp" style="font-size: 25px">Task 5 (registration)</a>
-<br/><br/>
-<a href="from-servlet-post" style="font-size: 25px">Task 6a (post)</a>
-<br/><br/>
-<a href="from-servlet-forward" style="font-size: 25px">Task 6b (forward)</a>
-<br/><br/>
-<a href="from-servlet-redirect" style="font-size: 25px">Task 6c (redirect)</a>
-<br/><br/>
-<a href="servlet1" style="font-size: 25px">Task 7 (include)</a>
-<br/><br/>
-<a href="ParamServlet" style="font-size: 25px">Task 8 (params)</a>
-<br/><br/>
+<div style="display: flex; justify-content: space-evenly;" id="container">
+
+                            <%--  9 ЛАБА  --%>
+    <div id="lab9">
+        <br/>
+        <h1><%= "STP_Lab9" %></h1>
+        <br/><br/>
+        <a href="hello-servlet" style="font-size: 25px">Task 2 (servlet info)</a>
+        <br/><br/>
+        <a href="login.jsp" style="font-size: 25px">Task 3 (jdbc + login)</a>
+        <br/><br/>
+        <a href="cookie-servlet" style="font-size: 25px">Task 4 (cookies)</a>
+        <br/><br/>
+        <a href="logging.jsp" style="font-size: 25px">Task 4 (logging)</a>
+        <br/><br/>
+        <a href="registration.jsp" style="font-size: 25px">Task 5 (registration)</a>
+        <br/><br/>
+        <a href="from-servlet-post" style="font-size: 25px">Task 6a (post)</a>
+        <br/><br/>
+        <a href="from-servlet-forward" style="font-size: 25px">Task 6b (forward)</a>
+        <br/><br/>
+        <a href="from-servlet-redirect" style="font-size: 25px">Task 6c (redirect)</a>
+        <br/><br/>
+        <a href="servlet1" style="font-size: 25px">Task 7 (include)</a>
+        <br/><br/>
+        <a href="param-servlet" style="font-size: 25px">Task 8 (params)</a>
+        <br/><br/><br/><br/>
+    </div>
+
+
+                            <%--  10 ЛАБА  --%>
+    <div id="lab10">
+        <br/>
+        <h1><%= "STP_Lab10" %></h1>
+        <br/><br/>
+        <a href="signInForm_10.jsp" style="font-size: 25px">Sign in form</a>
+    </div>
+
+
+</div>
+
 </body>
 </html>

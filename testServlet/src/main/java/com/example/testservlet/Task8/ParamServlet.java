@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet("/ParamServlet")
+
 public class ParamServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {

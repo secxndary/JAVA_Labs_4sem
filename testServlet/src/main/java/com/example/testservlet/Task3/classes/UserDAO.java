@@ -47,4 +47,25 @@ public class UserDAO {
                 "values ('" +  name +"', '" + pass + "', 'user')");
     }
 
+
+    public void addUserByAdmin(String name, String pass, String role) throws SQLException {
+        Connection connection = null;
+        Statement statement = null;
+
+        connection = database.getConnection();
+        statement = connection.createStatement();
+        statement.executeUpdate("insert into Users(UserName, UserPassword, UserRole) " +
+                "values ('" +  name +"', '" + pass + "', '" + role + "')");
+    }
+
+
+    public void deleteUser(String name) throws SQLException {
+        Connection connection = null;
+        Statement statement = null;
+
+        connection = database.getConnection();
+        statement = connection.createStatement();
+        statement.executeUpdate("delete from Users where UserName = '" + name + "'");
+    }
+
 }
