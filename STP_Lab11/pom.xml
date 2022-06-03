@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!--Дефолт-->
+    <groupId>valdaitsevv-prod</groupId>
+    <artifactId>STP_Lab11</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <!--Фикс version 5-->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+
+
+
+    <build>
+        <plugins>
+            <!--Плагин для antrun (profiles)-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>Hello! I am running!</echo>
+                                <echo>Current env is: ${app.env}</echo>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!--Плагин для проверки все ли зависимости юзают последнюю версию-->
+            <plugin>
+                <groupId>com.soebes.maven.plugins</groupId>
+                <artifactId>uptodate-maven-plugin</artifactId>
+                <version>0.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>dependency</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+
+
+    <profiles>
+        <!--Профиль dev-->
+        <profile>
+            <id>env-dev</id>
+            <properties>
+                <app.env>DEV</app.env>
+            </properties>
+
+            <!--mvn compile-->
+<!--            <activation>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
+        </profile>
+
+
+        <!--Профиль prod-->
+        <profile>
+            <id>env-prod</id>
+            <properties>
+                <app.env>PROD</app.env>
+            </properties>
+
+            <!--mvn compile -Denv=prod-->
+            <!--mvn compile -P env-prod-->
+            <activation>
+                 <property>
+                        <name>env</name>
+                        <value>prod</value>
+                 </property>
+            </activation>
+        </profile>
+
+
+        <!--Профиль test-->
+        <profile>
+            <id>env-test</id>
+            <properties>
+                <app.env>TEST</app.env>
+            </properties>
+            <!--mvn compile -P env-test-->
+        </profile>
+    </profiles>
+
+
+
+
+
+    <!--Зависимость на утилиту-->
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+    </dependencies>
+</project>
+
+
